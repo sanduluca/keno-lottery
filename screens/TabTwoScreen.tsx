@@ -1,14 +1,22 @@
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+
+const rules = [
+  'Select 5 spots (numbers) you would like to play.',
+  'Choose your own spots (numbers) from (1 through 80) or use the Quik Pik option and let the computer select for you.',
+  'Choose your play amount. You can play for $1 up to $5. Each play costs $1. Play for $2 to double your prize, $3 to triple your prize, and so on up to $5 per play.'
+]
 
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+
+      {rules.map((text, index) => (
+        <View key={text} style={styles.paragraph}>
+          <Text>{`${index + 1}. ${text}`}</Text>
+        </View>
+      ))}
     </View>
   );
 }
@@ -16,16 +24,9 @@ export default function TabTwoScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  paragraph: {
+    marginTop: 16,
+    marginHorizontal: 16,
   },
 });
