@@ -5,7 +5,7 @@ import { Text, View } from '../components/Themed';
 const rules = [
   'Select 5 spots (numbers) you would like to play.',
   'Choose your own spots (numbers) from (1 through 80) or use the Quik Pik option and let the computer select for you.',
-  'Choose your play amount. You can play for $1 up to $5. Each play costs $1. Play for $2 to double your prize, $3 to triple your prize, and so on up to $5 per play.'
+  'Choose your play amount. You can play for $1 up to $5.'
 ]
 
 export default function TabTwoScreen() {
